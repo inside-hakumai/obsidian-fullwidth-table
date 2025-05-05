@@ -1,8 +1,6 @@
 import { App, Plugin, PluginManifest } from 'obsidian'
 import { v4 as uuidv4 } from 'uuid'
 
-import './styles.css'
-
 type TableId = string
 
 export default class FullwidthTablePlugin extends Plugin {

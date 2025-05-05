@@ -15,13 +15,8 @@ If your plugin does not need CSS, delete this file.
 .cm-table-widget {
     width: fit-content;
     max-width: calc(var(--plugin-fullwidth-table-view-width) + var(--table-drag-handle-size));
-    /* left: calc(-1 * min(calc(var(--gap-line-length-and-view) / 2 - var(--file-margins)), calc(var(--overflow-width) / 2))); */
     left: calc(-1 * var(--plugin-fullwidth-table-left-gap));
 }
-
-/* .markdown-source-view.mod-cm6 .cm-table-widget .cm-content.cm-lineWrapping {
-    white-space: nowrap;
-} */
 
 body {
     --table-white-space: nowrap;
