@@ -107,37 +107,9 @@ export default class FullwidthTablePlugin extends Plugin {
 
             this.init()
         })
-
-        // this.registerMarkdownPostProcessor(
-
-        // 	(element: HTMLElement, context: MarkdownPostProcessorContext) => {
-        // 		console.debug(element, element.tagName, element.classList);
-
-        // 		const isTableWrapper =
-        // 			element.tagName === "DIV" &&
-        // 			element.classList.contains("el-table");
-        // 		if (isTableWrapper) {
-        // 			const tables = element.querySelectorAll("table");
-        // 			tables.forEach(this.processTable);
-        // 			return;
-        // 		}
-
-        // 		const isTableCellWrapper =
-        // 			element.tagName === "DIV" &&
-        // 			element.classList.contains("table-cell-wrapper");
-        // 		if (isTableCellWrapper) {
-        // 			const table = element.closest("table.table-editor");
-        // 			if (table && table instanceof HTMLTableElement) {
-        // 				this.processTable(table);
-        // 			}
-        // 		}
-        // 	}
-        // );
     }
 
     override onunload() {
-        // クリーンアップ処理があればここに記述
-        // 今回は registerMarkdownPostProcessor が自動で解除されるので基本不要
         console.log('FullwidthTablePlugin: Unloading plugin')
     }
 
@@ -194,30 +166,6 @@ export default class FullwidthTablePlugin extends Plugin {
         this.tableMap.setViewWidth(contentWidth)
         console.debug(`Detected view width: ${contentWidth}`)
     }
-
-    // private processTable(table: HTMLTableElement) {
-    // 	console.log("Found table element: ", table);
-    // 	// テーブル要素を直接含む親要素 (通常は <p> や <div>) を探す
-    // 	// もしくはテーブル自体にクラスを付与しても良いが、
-    // 	// スクロールコンテナとして親要素を使う方が一般的
-    // 	// ここでは、簡単のためテーブルの直接の親にクラスを付与する
-    // 	const parent = table.parentElement;
-    // 	console.log(parent, table.closest("div"));
-    // 	if (parent) {
-    // 		// 既にクラスが付与されているかチェック (重複付与防止)
-    // 		if (
-    // 			!parent.classList.contains(
-    // 				"fullwidth-table-container"
-    // 			)
-    // 		) {
-    // 			parent.classList.add("fullwidth-table-container");
-    // 			// デバッグ用にログ出力 (開発中は便利)
-    // 			console.log(
-    // 				"FullwidthTablePlugin: Applied class to table container"
-    // 			);
-    // 		}
-    // 	}
-    // }
 }
 
 type ChangeEventListeners = {
