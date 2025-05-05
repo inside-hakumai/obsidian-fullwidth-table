@@ -6,3 +6,18 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+/* .markdown-rendered table thead > tr > th,
+.markdown-rendered table tbody > tr > td {
+  white-space: nowrap;
+} */
+
+.cm-table-widget {
+    width: fit-content;
+    max-width: calc(var(--plugin-fullwidth-table-view-width) + var(--table-drag-handle-size));
+    left: calc(-1 * var(--plugin-fullwidth-table-left-gap));
+}
+
+body {
+    --table-white-space: nowrap;
+}
